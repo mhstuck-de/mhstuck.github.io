@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background: #333333;
+    font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1.5em;
+    display: grid;
+    place-items: center;
+}
+
+.wrapper {
+    max-width: 900px;
+}
+
+header, main {
+    width: 100%;
+}
+
+header {
+    nav {
+        padding: 2em 3em;
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+
+        img {
+            display: block;
+            height: 70px;
+        }
+
+        ul {
+            width: 775px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5em;
+
+            li {
+                list-style: none;
+                font-size: 1.2em;
+
+                a {
+                    color: #CCC;
+                    &:hover {
+                        color: lightblue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    color: white;
+    border: 1px solid #CCC;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+
+    .sidebar {
+        padding: 3em;
+    }
+
+    p a {
+        color: lightblue;
+    }
+
+    section {
+        background: #666;
+        padding: 3em;
+
+        ul {
+            padding-top: 1em;
+            padding-left: 3em;
+            list-style-type: square;
+        }
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 900px) {
+    .wrapper {
+        padding-inline: 2em;
+    }
+
+    header {
+        nav {
+            padding: 1em 0;
+            grid-template-columns: 1fr;
+            gap: 1em;
+            
+            ul {
+                width: 100%;
+                gap: 0;
+                justify-content: space-evenly;
+            }
+        }
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        padding-block: 2em;
+        gap: 2em;
+        border-inline: 1px solid transparent;
+
+        .sidebar {
+            padding: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
